@@ -13,7 +13,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 import java.util.Collections;
-
+//
 @Component
 @RequiredArgsConstructor
 public class JwtAuthFilter
@@ -22,11 +22,23 @@ public class JwtAuthFilter
     private final JwtUtil jwtUtil;
 
     @Override
+
     protected void doFilterInternal(
             HttpServletRequest request,
             HttpServletResponse response,
             FilterChain filterChain)
             throws ServletException, IOException {
+
+//        String path = request.getServletPath();
+//
+//        if (path.startsWith("/swagger-ui")
+//                || path.startsWith("/v3/api-docs")
+//                || path.equals("/auth/login")
+//                || path.equals("/auth/register")) {
+//
+//            filterChain.doFilter(request, response);
+//            return;
+//        }
 
         String authHeader =
                 request.getHeader("Authorization");
@@ -57,3 +69,5 @@ public class JwtAuthFilter
         filterChain.doFilter(request, response);
     }
 }
+
+

@@ -2,6 +2,7 @@ package com.example.transactions.Controllers;
 
 import com.example.transactions.DTO.RegisterRequest;
 import com.example.transactions.services.UserService;
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserContoller {
     private final UserService userService;
 
+    @Operation(summary="User Register")
     @PostMapping("/register")
     public ResponseEntity<String> register(@RequestBody RegisterRequest request) {
 

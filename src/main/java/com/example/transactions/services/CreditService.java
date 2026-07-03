@@ -31,9 +31,9 @@ public class CreditService {
                                 request.getUserId())
                         .orElseThrow();
 
-        wallet.setBalance(
-                wallet.getBalance()
-                        .add(request.getAmount()));
+//        wallet.setBalance(
+//                wallet.getBalance()
+//                        .add(request.getAmount()));
         //audit log
         BigDecimal before= wallet.getBalance();
         wallet.setBalance(
@@ -72,9 +72,9 @@ public class CreditService {
                     "Insufficient Balance");
         }
 
-        wallet.setBalance(
-                wallet.getBalance()
-                        .subtract(request.getAmount()));
+//        wallet.setBalance(
+//                wallet.getBalance()
+//                        .subtract(request.getAmount()));
 
         //audit_log
 

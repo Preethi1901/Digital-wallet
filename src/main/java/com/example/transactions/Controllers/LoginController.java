@@ -4,6 +4,7 @@ import com.example.transactions.DTO.LoginRequest;
 import com.example.transactions.DTO.LoginResponse;
 import com.example.transactions.services.LoginService;
 import com.example.transactions.services.UserService;
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -27,6 +28,7 @@ public class LoginController {
 
     private final LoginService loginService;
 
+    @Operation(summary = "User Login")
     @PostMapping("/login")
     public LoginResponse login(@RequestBody LoginRequest request) {
         return loginService.login(request);
